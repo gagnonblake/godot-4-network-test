@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxmicw6vtjg2l"]
+
+[ext_resource type="PackedScene" uid="uid://saaowwvakc74" path="res://maps/dungeon/dungeon_tileset.glb" id="1_24vk5"]
+[ext_resource type="Material" uid="uid://dctb6tg6yosmc" path="res://maps/dungeon/floor.tres" id="2_ak7iw"]
+[ext_resource type="Material" uid="uid://3l82ktb7fc0j" path="res://maps/dungeon/wall.tres" id="3_m1ook"]
+
+[node name="dungeon_tileset" instance=ExtResource("1_24vk5")]
+
+[node name="wall" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ak7iw")
+surface_material_override/1 = ExtResource("3_m1ook")
+
+[node name="corner-in" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_ak7iw")
+surface_material_override/1 = ExtResource("3_m1ook")
+
+[node name="floor" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_ak7iw")
+surface_material_override/1 = ExtResource("3_m1ook")
+
+[node name="corner-out" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_ak7iw")
+surface_material_override/1 = ExtResource("3_m1ook")

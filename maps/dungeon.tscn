@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4g7e4sicll78"]
+
+[ext_resource type="MeshLibrary" uid="uid://c1711cpbo15k" path="res://maps/dungeon/tileset.tres" id="1_m77l4"]
+[ext_resource type="PackedScene" uid="uid://jexme4ootshb" path="res://maps/campfire/campfire.tscn" id="2_lm7c1"]
+[ext_resource type="PackedScene" uid="uid://ce02oughkuyt0" path="res://maps/ball/ball.tscn" id="3_e4xph"]
+
+[node name="Dungeon" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh_library = ExtResource("1_m77l4")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65535, 65535, 2, 0, 65535, 2, 0, 0, 2, 65535, 0, 2, 65534, 0, 2, 65534, 65535, 2, 65533, 0, 2, 65533, 65535, 2, 65532, 0, 2, 65532, 65535, 2, 0, 2, 1441793, 0, 1, 1441795, 65535, 1, 655363, 65535, 2, 655361, 1, 1, 1441793, 1, 65534, 1, 0, 65533, 1, 65535, 65533, 1048577, 0, 65534, 3, 65535, 65534, 1048579, 2, 65535, 1, 2, 0, 1441793, 1, 65535, 3, 1, 0, 1441795, 65534, 1, 655360, 65534, 65534, 0, 65533, 65534, 0, 65532, 65534, 0, 65533, 1, 655360, 65532, 1, 655360, 65531, 65534, 1048577, 65531, 1, 655361, 65531, 0, 1048576, 65531, 65535, 1048576)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="campfire2" parent="." instance=ExtResource("2_lm7c1")]
+
+[node name="Ball" parent="." instance=ExtResource("3_e4xph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0832, 0.533162, 0)

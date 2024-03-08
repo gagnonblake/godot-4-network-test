@@ -1,0 +1,118 @@
+[gd_scene load_steps=18 format=3 uid="uid://jexme4ootshb"]
+
+[ext_resource type="PackedScene" uid="uid://cfuujnjtnx3gn" path="res://maps/campfire/campfire.glb" id="1_kbr5m"]
+[ext_resource type="Texture2D" uid="uid://d3asqvv14dmup" path="res://maps/campfire/fire.png" id="2_4rmie"]
+[ext_resource type="Texture2D" uid="uid://sjmoxvwvggnl" path="res://maps/campfire/smoke.png" id="3_h0bag"]
+
+[sub_resource type="Gradient" id="Gradient_k4sce"]
+colors = PackedColorArray(1, 0.713726, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aq1q7"]
+gradient = SubResource("Gradient_k4sce")
+
+[sub_resource type="Curve" id="Curve_cceil"]
+_data = [Vector2(0.0174825, 0.427557), 0.0, 0.0, 0, 0, Vector2(0.41958, 0.372159), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lynnc"]
+curve = SubResource("Curve_cceil")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0lq51"]
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 1.0
+linear_accel_max = 1.0
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_lynnc")
+color_ramp = SubResource("GradientTexture1D_aq1q7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aihx2"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_4rmie")
+texture_filter = 0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_3lc1g"]
+material = SubResource("StandardMaterial3D_aihx2")
+
+[sub_resource type="Gradient" id="Gradient_ng3kn"]
+offsets = PackedFloat32Array(0, 0.267442, 0.627907, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.155753, 1, 1, 1, 0.462745, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sx363"]
+gradient = SubResource("Gradient_ng3kn")
+
+[sub_resource type="Curve" id="Curve_uw23f"]
+_data = [Vector2(0, 0.492188), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xd247"]
+curve = SubResource("Curve_uw23f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_msauv"]
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 1.0
+linear_accel_max = 1.0
+scale_curve = SubResource("CurveTexture_xd247")
+color_ramp = SubResource("GradientTexture1D_sx363")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uc6yc"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_h0bag")
+texture_filter = 0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_ijf36"]
+material = SubResource("StandardMaterial3D_uc6yc")
+
+[node name="campfire2" instance=ExtResource("1_kbr5m")]
+
+[node name="flames" type="GPUParticles3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.358262, 0)
+amount = 16
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_0lq51")
+draw_pass_1 = SubResource("QuadMesh_3lc1g")
+
+[node name="smoke" type="GPUParticles3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19107, 0)
+amount = 16
+lifetime = 2.0
+preprocess = 2.0
+speed_scale = 0.66
+process_material = SubResource("ParticleProcessMaterial_msauv")
+draw_pass_1 = SubResource("QuadMesh_ijf36")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.554065, 0)
+light_color = Color(0.721569, 0.541176, 0.360784, 1)
+light_energy = 10.0
+shadow_enabled = true
+omni_range = 100.0
+omni_attenuation = 2.0

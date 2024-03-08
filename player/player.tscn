@@ -1,0 +1,299 @@
+[gd_scene load_steps=13 format=3 uid="uid://br471b3pfceow"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_vty2o"]
+[ext_resource type="PackedScene" uid="uid://dgadve2cosmey" path="res://player/hand/hand.tscn" id="2_lq5m6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2f01y"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wlre5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a1fqh"]
+
+[sub_resource type="Animation" id="Animation_wgwer"]
+resource_name = "IdleHands"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(0.7, 0.5, 0.05), Vector3(0.7, 0.459615, 0.05), Vector3(0.7, 0.5, 0.05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(-0.7, 0.5, 0.05), Vector3(-0.7, 0.459615, 0.05), Vector3(-0.7, 0.5, 0.05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(7.64274e-15, -1.74846e-07, -3.14159), Vector3(7.64274e-15, -1.74846e-07, -3.14159), Vector3(7.64274e-15, -1.74846e-07, -3.14159)]
+}
+
+[sub_resource type="Animation" id="Animation_58ixq"]
+resource_name = "LookHands"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(0.3, 1.9, -0.7), Vector3(0.3, 1.875, -0.7), Vector3(0.3, 1.9, -0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(8.74228e-08, 1.5708, 3.14159), Vector3(8.74228e-08, 1.5708, 3.14159)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(-0.3, 1.9, -0.7), Vector3(-0.3, 1.875, -0.7), Vector3(-0.3, 1.9, -0.7)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-8.74228e-08, 1.5708, 1.50996e-07), Vector3(-8.74228e-08, 1.5708, 1.50996e-07)]
+}
+
+[sub_resource type="Animation" id="Animation_sba70"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7, 0.5, 0.05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.7, 0.5, 0.05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.64274e-15, -1.74846e-07, -3.14159)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_773ko"]
+_data = {
+"IdleHands": SubResource("Animation_wgwer"),
+"LookHands": SubResource("Animation_58ixq"),
+"RESET": SubResource("Animation_sba70")
+}
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7ri8k"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Camera3D:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:current_hand_color")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("Hands/LeftHand:position")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("Hands/LeftHand:rotation")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+properties/6/path = NodePath("Hands/RightHand:position")
+properties/6/spawn = true
+properties/6/replication_mode = 1
+properties/7/path = NodePath("Hands/RightHand:rotation")
+properties/7/spawn = true
+properties/7/replication_mode = 1
+properties/8/path = NodePath("Hands/LeftHand:scale")
+properties/8/spawn = true
+properties/8/replication_mode = 1
+properties/9/path = NodePath("Hands/RightHand:scale")
+properties/9/spawn = true
+properties/9/replication_mode = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tciyu"]
+load_path = "res://.godot/imported/ret.png-463731f71fa8f1875621481d6332b1ca.ctex"
+
+[sub_resource type="BoxMesh" id="BoxMesh_tbh7l"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 5
+script = ExtResource("1_vty2o")
+current_hand_color = Color(1, 1, 1, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_2f01y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_wlre5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0130498, 0)
+target_position = Vector3(0, 0, -50)
+collision_mask = 2
+
+[node name="Collision" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.877748, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0.1, 0)
+shape = SubResource("CapsuleShape3D_a1fqh")
+
+[node name="Hands" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hands"]
+libraries = {
+"": SubResource("AnimationLibrary_773ko")
+}
+playback_default_blend_time = 0.05
+
+[node name="RightHand" parent="Hands" instance=ExtResource("2_lq5m6")]
+transform = Transform3D(-1, 0, 2.53518e-06, 0, 1, 0, -2.53518e-06, 0, -1, 0.7, 0.5, 0.05)
+
+[node name="LeftHand" parent="Hands" instance=ExtResource("2_lq5m6")]
+transform = Transform3D(1, -2.53518e-06, 1.74846e-07, 2.53518e-06, 1, 7.64274e-15, 1.74846e-07, -4.35624e-13, -1, -0.7, 0.5, 0.05)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_7ri8k")
+
+[node name="Interactable" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Interactable"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Interactable/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_tciyu")
+stretch_mode = 2
+
+[node name="HoldPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0048697, 1.03024, -1.61175)
+
+[node name="Marker3D" type="Marker3D" parent="HoldPoint"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HoldPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0141445, 0.00422132)
+visible = false
+mesh = SubResource("BoxMesh_tbh7l")
+
+[connection signal="body_shape_entered" from="Collision" to="." method="_on_collision_body_shape_entered"]
+[connection signal="body_shape_exited" from="Collision" to="." method="_on_collision_body_shape_exited"]
